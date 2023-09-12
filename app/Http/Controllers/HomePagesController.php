@@ -4,15 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-class RegisterController extends Controller
+
+class HomePagesController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('Front-End.register');
+        $user=User::all();
+        return view ('Front-End.HomePage.IndexHomePage',[
+            'user'=>$user
+        ]);
     }
 
     /**
@@ -28,15 +31,7 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-      $validatedData=$request->validate([
-        'email'=>'required|email:dns|unique:users',
-        'name'=>'required|min:3|max:50',
-        'password'=>'required|min:4|max:20',
-      ]);
-    $validatedData['id']=hash::make($validatedData['password']);  // $validatedData['password']= bcrypt($validatedData['password']);
-     User::create($validatedData);
-      return dd('berhasil');
-  
+        //
     }
 
     /**
