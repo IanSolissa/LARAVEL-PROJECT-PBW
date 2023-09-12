@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\HomePagesController;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,5 +33,7 @@ use App\Http\Controllers\RegisterController;
 // });
 
 require __DIR__.'/auth.php';
-
-Route::get('/',[RegisterController::class,'index']);
+Route::get('/',[LandingPageController::class,'index']);
+Route::get('/Login',[LoginController::class,'index']);                          
+Route::get('/Register',[RegisterController::class,'index']);
+Route::resource('/homepage',HomePagesController::class);
