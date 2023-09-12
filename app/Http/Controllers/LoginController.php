@@ -36,7 +36,11 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
+
             return redirect()->intended('/homepage');
+
+            return redirect()->intended('/landingpage');
+
         }
         dd('Salah/user tidak terbaca');
     }

@@ -12,7 +12,11 @@ class RegisterController extends Controller
      */
     public function index()
     {
+
         return view('Front-End.register');
+
+     return view('Front-End.Register');
+
     }
 
     /**
