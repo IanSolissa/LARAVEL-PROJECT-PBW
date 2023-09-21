@@ -22,11 +22,14 @@
                 <input type="password" id="password" name="password" placeholder="Password">
                 <img src="images/eye-close.png" class="img1" />
                 <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
-                <img src="images/eye-close.png" class="img2" />
+                <img src="images/eye-close.png" class="img2" onclick="toggleConfirm()" />
                 <button type="submit" class="regist__button">Register</button>
             </form>
         </div>
     </div>
+    <footer>
+
+    </footer>
     <script src="js/Register.js"></script>
 </body>
 
