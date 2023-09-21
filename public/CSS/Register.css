@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@400;500;700&family=Montserrat+Alternates:wght@700&display=swap");
 * {
     padding: 0;
     margin: 0;
@@ -9,14 +9,20 @@ body {
     font-family: "Montserrat Alternates", sans-serif;
     width: 100vw;
     height: 100vh;
-    display: flex;
+    overflow-y: hidden;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 }
 
+hr {
+    width: 50%;
+    margin: 0 auto;
+}
 .form__container {
+    margin-top: 80px;
     min-width: 60%;
-    min-height: 60%;
+    min-height: 80%;
 }
 
 .form__container > h1 {
@@ -69,11 +75,23 @@ input {
 img {
     position: absolute;
     top: 13.5rem;
-    right: 17.5rem;
+    right: 41rem;
     width: 40px;
     cursor: pointer;
 }
 
 .img2 {
     top: 19.5rem;
+}
+
+footer {
+    width: 100%;
+    min-height: 12%;
+    background-color: #0e293a;
+    font-family: "Jura", sans-serif;
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

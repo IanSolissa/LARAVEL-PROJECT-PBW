@@ -28,7 +28,7 @@
         </div>
     </div>
     <footer>
-
+        copyright &#169; 2023 Contix.m
     </footer>
     <script src="js/Register.js"></script>
 </body>
