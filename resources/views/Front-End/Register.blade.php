@@ -20,11 +20,14 @@
                 <input type="text" id="username" maxlength="50" name="username" placeholder="Username">
                 <input type="email" id="email" name="email" placeholder="Email">
                 <input type="password" id="password" name="password" placeholder="Password">
+                <img src="images/eye-close.png" class="img1" />
                 <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
+                <img src="images/eye-close.png" class="img2" />
                 <button type="submit" class="regist__button">Register</button>
             </form>
         </div>
     </div>
+    <script src="js/Register.js"></script>
 </body>
 
 </html>
