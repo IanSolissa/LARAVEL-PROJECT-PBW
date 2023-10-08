@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Register;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class RegisterController extends Controller
+class HomePagesController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-     return view('Front-End.Register');
+        $user=User::all();
+        return view ('Front-End.HomePage.IndexHomePage',[
+            'user'=>$user
+        ]);
     }
 
     /**
@@ -34,7 +37,7 @@ class RegisterController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Register $register)
+    public function show(User $user)
     {
         //
     }
@@ -42,7 +45,7 @@ class RegisterController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Register $register)
+    public function edit(User $user)
     {
         //
     }
@@ -50,7 +53,7 @@ class RegisterController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Register $register)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -58,7 +61,7 @@ class RegisterController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Register $register)
+    public function destroy(User $user)
     {
         //
     }

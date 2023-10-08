@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Register;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class RegisterController extends Controller
+class LoginController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-     return view('Front-End.Register');
+        return view('Front-End.Login');
     }
 
     /**
@@ -28,13 +29,22 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $credentials = $request->validate([
+            'email' => 'required|email:dns',
+            'password' => 'required|max:20',
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/landingpage');
+        }
+        dd('Salah/user tidak terbaca');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Register $register)
+    public function show(User $user)
     {
         //
     }
@@ -42,7 +52,7 @@ class RegisterController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Register $register)
+    public function edit(User $user)
     {
         //
     }
@@ -50,7 +60,7 @@ class RegisterController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Register $register)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -58,7 +68,7 @@ class RegisterController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Register $register)
+    public function destroy(User $user)
     {
         //
     }
