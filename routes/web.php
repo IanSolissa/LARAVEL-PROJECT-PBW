@@ -18,11 +18,18 @@ use App\Http\Controllers\LoginController;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-=======
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -39,15 +46,11 @@ Route::get('/dashboard', function () {
 // });
 
 
-require __DIR__ . '/auth.php';
-Route::get('/', [LandingPageController::class, 'index']);
-Route::get('/Login', [LoginController::class, 'index']);
-Route::get('/Register', [RegisterController::class, 'index']);
-Route::resource('/homepage', HomePagesController::class);
 
 require __DIR__.'/auth.php';
 Route::get('/',[LandingPageController::class,'index']);
 Route::get('/Login',[LoginController::class,'index']);                          
 Route::get('/Register',[RegisterController::class,'index']);
+Route::resource('/homepage',HomePagesController::class);
 Route::resource('/homepage',HomePagesController::class);
 
