@@ -43,5 +43,10 @@
     {{-- my js --}}
     <script src="JS/Login.js"></script>
 
+  <title>FEATURES</title>
+  <link rel="stylesheet" href="landing-page.css">
+</head>
+<body>
+bikin buuat login yak
 </body>
 </html>
