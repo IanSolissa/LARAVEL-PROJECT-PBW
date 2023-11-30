@@ -1,11 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-
 use App\Models\User;
 class RegisterController extends Controller
 {
@@ -30,12 +27,11 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-      $validatedData=$request->validate([
+      $validation=$request->validate([
         'email'=>'required|email:dns|unique:users',
         'name'=>'required|min:3|max:50',
         'password'=>'required|min:4|max:20',
       ]);
-    $validatedData['id']=hash::make($validatedData['password']);  // $validatedData['password']= bcrypt($validatedData['password']);    
       user::create($validation);
       $request->session()->regenerate();
       return redirect()->intended('/Login');
