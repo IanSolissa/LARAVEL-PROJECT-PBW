@@ -15,14 +15,14 @@
         <h1>Let's join us</h1>
         <hr>
         <div class="form__wrapper">
-            <form action="" method="POST">
+            <form action="/Register" method="POST">
                 @csrf
-                <input type="text" id="username" maxlength="50" name="username" placeholder="Username">
-                <input type="email" id="email" name="email" placeholder="Email">
-                <input type="password" id="password" name="password" placeholder="Password">
-                <img src="images/eye-close.png" class="img1" />
+                <input required type="text" id="username" name="username" placeholder="Username">
+                <input required type="email" id="email" name="email" placeholder="Email">
+                <input required type="password" id="password" name="password" placeholder="Password">
+                {{-- <img src="images/eye-close.png" class="img1" /> --}}
                 <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
-                <img src="images/eye-close.png" class="img2" onclick="toggleConfirm()" />
+                {{-- <img src="images/eye-close.png" class="img2" onclick="toggleConfirm()" /> --}}
                 <button type="submit" class="regist__button">Register</button>
             </form>
         </div>

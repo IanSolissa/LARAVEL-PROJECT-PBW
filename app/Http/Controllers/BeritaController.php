@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use Illuminate\Http\Request;
+use App\Models\Berita;
+use App\Http\Requests\StoreBeritaRequest;
+use App\Http\Requests\UpdateBeritaRequest;
 
-class HomePagesController extends Controller
+class BeritaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view ('Front-End.HomePage.layouts.MainHomePage');
-        
+        //
     }
 
     /**
@@ -27,7 +27,7 @@ class HomePagesController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreBeritaRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class HomePagesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(User $user)
+    public function show(Berita $berita)
     {
         //
     }
@@ -43,7 +43,7 @@ class HomePagesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user)
+    public function edit(Berita $berita)
     {
         //
     }
@@ -51,7 +51,7 @@ class HomePagesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user)
+    public function update(UpdateBeritaRequest $request, Berita $berita)
     {
         //
     }
@@ -59,7 +59,7 @@ class HomePagesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy(Berita $berita)
     {
         //
     }

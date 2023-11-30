@@ -17,7 +17,7 @@
 
 
     {{-- form --}}
-    <form action="#" class="container">
+    <form method="POST" action="/Login" class="container" enctype="multipart/form-data">
         @csrf
 
         <div class="form-item">
@@ -28,25 +28,25 @@
 
         {{-- button --}}
         <div class="container">
-            <button class="login-btn">Login</button>
+            <button type="submit" class="login-btn">Login</button>
         </div>
     </form>
     {{-- form end --}}
 
 
-    {{-- footer --}}
-    <footer>
-        <p>Copyright &#169; 2023 Contix.m</p>
-    </footer>
-
+  
 
     {{-- my js --}}
     <script src="JS/Login.js"></script>
 
-  <title>FEATURES</title>
-  <link rel="stylesheet" href="landing-page.css">
-</head>
-<body>
-bikin buuat login yak
+    <footer>
+        <p>Copyright &#169; 2023 Contix.m</p>
+    </footer>
 </body>
-</html>
+  {{-- footer --}}
+  
+
+
+
+
+

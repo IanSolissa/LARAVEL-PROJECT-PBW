@@ -27,19 +27,32 @@ class LoginController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        $credentials = $request->validate([
-            'email' => 'required|email:dns',
-            'password' => 'required|max:20',
-        ]);
+    public function auth(Request $request)
+   {
+  
 
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-            return redirect()->intended('/landingpage');
+        $credentials = $request->validate([
+           'email'=>'required|email:dns',
+           'password'=>'required'
+        ]);
+    
+        // Jika benar
+    
+    
+    
+    
+        if(Auth::attempt($credentials)){
+           $request->session()->regenerate();
+           return redirect()->intended('/PinkFloyd');
+    
         }
-        dd('Salah/user tidak terbaca');
-    }
+    return back()->with("failed","Login Tidak Berhasil!");
+        // jika salah
+        // with dengan pesan
+    
+        
+    
+   }
 
     /**
      * Display the specified resource.

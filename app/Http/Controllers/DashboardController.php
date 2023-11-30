@@ -2,17 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Register;
+use App\Models\Artis;
+use App\Models\Berita;
 use Illuminate\Http\Request;
-use App\Models\User;
-class RegisterController extends Controller
+
+class DashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-     return view('Front-End.Register');
+        // $testing = Berita::all();
+        // dd($testing->artis);
+        return view('BackEnd.Dashboard.MainDashboard',[
+            'Berita'=>Berita::all(),
+            'Artis'=>Artis::all(),
+        ]);
+        
     }
 
     /**
@@ -20,7 +27,7 @@ class RegisterController extends Controller
      */
     public function create()
     {
-        //
+     
     }
 
     /**
@@ -29,22 +36,18 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
         $validation=$request->validate([
-            'username'=>'required',
-            'email' => 'required|email:dns',
-            'password' => 'required|max:20',
-      ]);
-      
-      user::create($validation);
-      $request->session()->regenerate();
-      return redirect()->intended('/Login');
-    
-
+            'judul_berita'=>'required||max:20',
+            'id_artis'=>'required',
+            'isi_berita'=>'required',
+        ]);
+        Berita::create($validation);
+        return redirect('/Dashboard');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Register $register)
+    public function show(string $id)
     {
         //
     }
@@ -52,7 +55,7 @@ class RegisterController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Register $register)
+    public function edit(string $id)
     {
         //
     }
@@ -60,7 +63,7 @@ class RegisterController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Register $register)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -68,8 +71,10 @@ class RegisterController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Register $register)
+    public function destroy(string $id)
     {
-        //
+        Berita::destroy($id);
+        return redirect('/Dashboard');
+
     }
 }

@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('tiket', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
-            $table->string('email')->unique();
-            // $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->string('role_user')->default('none');
-            $table->rememberToken();
+            $table->string('nama_tiket');
+            $table->integer('harga_tiket');
+            $table->string('lokasi_tiket');
+            $table->unsignedBigInteger('id_berita');
+            $table->foreign('id_berita')->references('id')->on('beritas');
             $table->timestamps();
-
         });
     }
 
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('tiket');
     }
 };
