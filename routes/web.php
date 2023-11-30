@@ -50,6 +50,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
+
 require __DIR__.'/auth.php';
 Route::get('/',[LandingPageController::class,'index'])->middleware('guest');
 Route::get('/Login',[LoginController::class,'index'])->name('login')->middleware('guest');                     

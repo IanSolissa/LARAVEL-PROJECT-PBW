@@ -12,10 +12,6 @@ class HomePagesController extends Controller
      */
     public function index()
     {
-        $user=User::all();
-        return view ('Front-End.HomePage.IndexHomePage',[
-            'user'=>$user
-        ]);
         return view ('Front-End.HomePage.layouts.MainHomePage');
         
     }

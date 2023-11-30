@@ -27,19 +27,6 @@ class LoginController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        $credentials = $request->validate([
-            'email' => 'required|email:dns',
-            'password' => 'required|max:20',
-        ]);
-
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-            return redirect()->intended('/homepage');
-        }
-        dd('Salah/user tidak terbaca');
-    }
     public function auth(Request $request)
    {
   
@@ -66,7 +53,6 @@ class LoginController extends Controller
         
     
    }
-
 
     /**
      * Display the specified resource.
