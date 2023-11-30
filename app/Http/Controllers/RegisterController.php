@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Register;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
 use App\Models\User;
 class RegisterController extends Controller
 {
@@ -28,23 +30,21 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        $validation=$request->validate([
-            'username'=>'required',
-            'email' => 'required|email:dns',
-            'password' => 'required|max:20',
+      $validatedData=$request->validate([
+        'email'=>'required|email:dns|unique:users',
+        'name'=>'required|min:3|max:50',
+        'password'=>'required|min:4|max:20',
       ]);
-      
+    $validatedData['id']=hash::make($validatedData['password']);  // $validatedData['password']= bcrypt($validatedData['password']);    
       user::create($validation);
       $request->session()->regenerate();
       return redirect()->intended('/Login');
-    
-
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Register $register)
+    public function show(User $user)
     {
         //
     }
@@ -52,7 +52,7 @@ class RegisterController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Register $register)
+    public function edit(User $user)
     {
         //
     }
@@ -60,7 +60,7 @@ class RegisterController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Register $register)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -68,7 +68,7 @@ class RegisterController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Register $register)
+    public function destroy(User $user)
     {
         //
     }

@@ -1,5 +1,3 @@
-{{-- ini jangan di hapus yak buat tamplate --}}
-
 @extends('Front-End.HomePage.SuperHomePage')
 @section('container')
     <section>

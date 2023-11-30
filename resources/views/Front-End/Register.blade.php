@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="e
 
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Yeseva+One:400,700&display=swap">
@@ -32,18 +32,4 @@
     </footer>
     <script src="js/Register.js"></script>
 </body>
-
-
-<head>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Yeseva+One:400,700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700&display=swap">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=+, initial-scale=1.0">
-  <title>FEATURES</title>
-  <link rel="stylesheet" href="landing-page.css">
-</head>
-<body>
-    bikin buat register yak,thanks
-</body>
-
 </html>

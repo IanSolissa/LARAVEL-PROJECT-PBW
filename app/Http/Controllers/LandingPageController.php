@@ -12,11 +12,14 @@ class LandingPageController extends Controller
      */
     public function index()
     {
+        $user=User::all();
+        return view('Front-End.LandingPage',[
+            'user'=>$user
+        
         // $user=User::all();
         // return view('Front-End.LandingPage',[
         //     'user'=>$user
-        // ]);
-        return view ('Front-End.LandingPage');
+
     }
   
 
