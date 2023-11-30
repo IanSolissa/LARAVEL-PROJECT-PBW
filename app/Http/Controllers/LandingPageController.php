@@ -15,7 +15,11 @@ class LandingPageController extends Controller
         $user=User::all();
         return view('Front-End.LandingPage',[
             'user'=>$user
-        ]);
+        
+        // $user=User::all();
+        // return view('Front-End.LandingPage',[
+        //     'user'=>$user
+
     }
   
 

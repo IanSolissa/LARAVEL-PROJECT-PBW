@@ -40,6 +40,33 @@ class LoginController extends Controller
         }
         dd('Salah/user tidak terbaca');
     }
+    public function auth(Request $request)
+   {
+  
+
+        $credentials = $request->validate([
+           'email'=>'required|email:dns',
+           'password'=>'required'
+        ]);
+    
+        // Jika benar
+    
+    
+    
+    
+        if(Auth::attempt($credentials)){
+           $request->session()->regenerate();
+           return redirect()->intended('/PinkFloyd');
+    
+        }
+    return back()->with("failed","Login Tidak Berhasil!");
+        // jika salah
+        // with dengan pesan
+    
+        
+    
+   }
+
 
     /**
      * Display the specified resource.
